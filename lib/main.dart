@@ -1,3 +1,4 @@
+import 'package:app_1/screens/activities/LoginPageActivities.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData(primarySwatch: Colors.amber),
       color: Colors.blue,
       debugShowCheckedModeBanner: false,
-      home: MyHomePage(),
+      home: LoginPage(),
     );
   }
 }
@@ -83,6 +84,13 @@ class _MyHomePageState extends State<MyHomePage> {
               leading: Icon(Icons.settings),
               title: Text("Settings"),
               onTap: () {},
+            ),
+            ListTile(
+              leading: Icon(Icons.logout),
+              title: Text("Logout"),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
+              },
             ),
           ],
         ),
